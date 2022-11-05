@@ -37,4 +37,5 @@ def found_recipes():
 
 @app.route('/found_recipes/<int:Recipe_ID>')
 def show_recipe(Recipe_ID):
-    return 'something'
+    # search ingredient list 
+    return render_template('index.html', title=Recipe_ID)
