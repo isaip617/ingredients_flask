@@ -34,3 +34,7 @@ def found_recipes():
     'unusedIngredients': [], 'likes': 1}]
 
     return render_template('found_recipes.html', title = "Found Recipes", recipes = recipes, ingredients = ingredients)
+
+@app.route('/found_recipes/<int:Recipe_ID>')
+def show_recipe(Recipe_ID):
+    return 'something'
