@@ -9,10 +9,11 @@
 <body>
     <h2>Recipe Finder</h2>
     <p>Please input the ingredients you have into the box separated by commas and spaces.</p>
-    <p>Example: apples, flour, sugar</p>
+    <p><i>Example: apples, flour, sugar</i></p>
     <form action="/index" id="form1" method = post>
         <label for="ingredients">Ingredients:</label>
         <input type="text" id="ingredients" name="ingredients"><br><br>
+
         <label for="meal_type">What type of meal?</label><br>
         <input type="checkbox" id="meal1" name="meal1" value="Breakfast">
         <label for="meal1"> Breakfast</label><br>
@@ -22,6 +23,21 @@
         <label for="meal3"> Snack</label><br>
         <input type="checkbox" id="meal4" name="meal4" value="Dessert">
         <label for="meal4"> Dessert</label><br>
+        <input type="checkbox" id="meal5" name="meal5" value="Beverage">
+        <label for="meal5"> Beverage</label><br>
+
+        <br>
+
+        <label for = "diet">Any specific diets?</label><br>
+        <input type="checkbox" id="diet1" name="diet1" value="Gluten Free">
+        <label for="diet1"> Gluten Free</label><br>
+        <input type="checkbox" id="diet2" name="diet2" value="Vegetarian">
+        <label for="diet2"> Vegetarian</label><br>
+        <input type="checkbox" id="diet3" name="diet3" value="Vegan">
+        <label for="diet3"> Vegan</label><br>
+        <input type="checkbox" id="diet4" name="diet4" value="Pescatarian">
+        <label for="diet4"> Pescatarian</label><br><br>
+
         <input type="submit" value="Submit">
         
         

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Found Recipes</title>
+</head>
+<body>
+    <p>Your ingredients are {{ingredients}}</p>
+    {% for recipe in recipes %}
+    <h2><b>{{recipe.title}}</b></h2>
+    <p>You are missing {{recipe.missedIngredientCount}} ingredient(s) for this recipe.</p>
+    {% endfor %}
+</body>
+</html>
