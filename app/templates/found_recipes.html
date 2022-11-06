@@ -8,9 +8,9 @@
 </head>
 <body>
     <p>Your ingredients are {{ingredients}}</p>
-    {% for recipe in recipes %}
-    <h2><b><a href="/found_recipes/{{recipe.id}}">{{recipe.title}}</a></b></h2>
-    <p>You are missing {{recipe.missedIngredientCount}} ingredient(s) for this recipe.</p>
+    {% for id, recipe in recipes.items() %}
+    <h2><b><a href="/found_recipes/{{id}}">{{recipe['title']}}</a></b></h2>
+    <p>You are missing {{len(recipe['missedIngredients'])}} ingredient(s) for this recipe.</p>
     {% endfor %}
 </body>
 </html>
