@@ -7,8 +7,9 @@
     <title>Petr's Pantry Meals - Found Recipes</title>
 </head>
 <body>
-    <p>Your ingredients are {{ingredients}}</p>
+    <h1>Your ingredients are {{ingredients}}</h1>
     {% for id, recipe in recipes.items() %}
+    <img src={{recipe.image}}>
     <h2><b><a href="/found_recipes/{{id}}">{{recipe['title']}}</a></b></h2>
     {% endfor %}
 </body>
