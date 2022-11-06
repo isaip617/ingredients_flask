@@ -6,7 +6,7 @@
 # import spoontacular_api as sp
 import requests
 
-KEY = "apiKey=af92a69ca7cb4348a5ab3afb2ff3dc71"
+KEY = "apiKey=b9ab8744ef5c4d319495d24f2f2d8544"
 BASE_URL = "https://api.spoonacular.com/recipes/findByIngredients?"
 PARAMETERS = "ingredients=apples&number=1"
 

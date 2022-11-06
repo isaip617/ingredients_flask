@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Found Recipes</title>
+    <title>Petr's Pantry Meals - Found Recipes</title>
 </head>
 <body>
     <p>Your ingredients are {{ingredients}}</p>
     {% for id, recipe in recipes.items() %}
     <h2><b><a href="/found_recipes/{{id}}">{{recipe['title']}}</a></b></h2>
-    <p>You are missing {{len(recipe['missedIngredients'])}} ingredient(s) for this recipe.</p>
     {% endfor %}
 </body>
 </html>

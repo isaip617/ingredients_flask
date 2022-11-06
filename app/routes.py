@@ -2,7 +2,7 @@ from flask import render_template, redirect, url_for, request
 from app import app
 import requests
 
-KEY = "apiKey=84e7680f986247be9133ae649ec398b9"
+KEY = "apiKey=b9ab8744ef5c4d319495d24f2f2d8544"
 BASE_URL = "https://api.spoonacular.com/recipes/"
 
 
@@ -112,47 +112,13 @@ def found_recipes():
     if request.method == 'POST':
         #print(request.form)
         recipes = format_input(request.form) # ingredients input
-        #print("Printing recipes")
-        #print(recipes)
-    #recipes = #[{'id': 633547, 'title': 'Baked Cinnamon Apple Slices', 
-    # 'image': 'https://spoonacular.com/recipeImages/633547-312x231.jpg', 'imageType': 'jpg', 
-    # 'usedIngredientCount': 1, 'missedIngredientCount': 2, 'missedIngredients': [{'id': 2010, 
-    # 'amount': 1.5, 'unit': 'tablespoons', 'unitLong': 'tablespoons', 'unitShort': 'Tbsp', 
-    # 'aisle': 'Spices and Seasonings', 'name': 'cinnamon', 'original': '1 1/2 tablespoons of Cinnamon', 
-    # 'originalName': 'Cinnamon', 'meta': [], 
-    # 'image': 'https://spoonacular.com/cdn/ingredients_100x100/cinnamon.jpg'}, 
-    # {'id': 9299, 'amount': 0.5, 'unit': 'cup', 'unitLong': 'cups', 
-    # 'unitShort': 'cup', 'aisle': 'Dried Fruits;Produce;Baking', 'name': 'raisins', 
-    # 'original': '1/2 cup of Raisins', 'originalName': 'Raisins', 'meta': [], 
-    # 'image': 'https://spoonacular.com/cdn/ingredients_100x100/raisins.jpg'}], 
-    # 'usedIngredients': [{'id': 9003, 'amount': 4.0, 'unit': '', 'unitLong': '', 
-    # 'unitShort': '', 'aisle': 'Produce', 'name': 'apples', 'original': 
-    # '4 Apples Sliced and Peeled – whatever type of apples I have in my refrigerator', 
-    # 'originalName': 'Apples Sliced and Peeled – whatever type of apples I have in my refrigerator', 
-    # 'meta': ['peeled', 'sliced'], 'image': 'https://spoonacular.com/cdn/ingredients_100x100/apple.jpg'}], 
-    # 'unusedIngredients': [], 'likes': 1}]
-    #print(recipes)
+ 
     return render_template('found_recipes.html', title = "Found Recipes", recipes = recipes, ingredients = request.form["ingredients"])
 
 @app.route('/found_recipes/<int:Recipe_ID>')
 def show_recipe(Recipe_ID):
     # search ingredient list 
-    recipe = {'id': 633547, 'title': 'Baked Cinnamon Apple Slices', 
-    'image': 'https://spoonacular.com/recipeImages/633547-312x231.jpg', 'imageType': 'jpg', 
-    'usedIngredientCount': 1, 'missedIngredientCount': 2, 'missedIngredients': [{'id': 2010, 
-    'amount': 1.5, 'unit': 'tablespoons', 'unitLong': 'tablespoons', 'unitShort': 'Tbsp', 
-    'aisle': 'Spices and Seasonings', 'name': 'cinnamon', 'original': '1 1/2 tablespoons of Cinnamon', 
-    'originalName': 'Cinnamon', 'meta': [], 
-    'image': 'https://spoonacular.com/cdn/ingredients_100x100/cinnamon.jpg'}, 
-    {'id': 9299, 'amount': 0.5, 'unit': 'cup', 'unitLong': 'cups', 
-    'unitShort': 'cup', 'aisle': 'Dried Fruits;Produce;Baking', 'name': 'raisins', 
-    'original': '1/2 cup of Raisins', 'originalName': 'Raisins', 'meta': [], 
-    'image': 'https://spoonacular.com/cdn/ingredients_100x100/raisins.jpg'}], 
-    'usedIngredients': [{'id': 9003, 'amount': 4.0, 'unit': '', 'unitLong': '', 
-    'unitShort': '', 'aisle': 'Produce', 'name': 'apples', 'original': 
-    '4 Apples Sliced and Peeled – whatever type of apples I have in my refrigerator', 
-    'originalName': 'Apples Sliced and Peeled – whatever type of apples I have in my refrigerator', 
-    'meta': ['peeled', 'sliced'], 'image': 'https://spoonacular.com/cdn/ingredients_100x100/apple.jpg'}], 
-    'unusedIngredients': [], 'likes': 1}
+    recipe = build_url(str(Recipe_ID) + "/information?")
+    placehold = ["apples", "flour", "sugar", "salt", "water", "bread"] 
 
-    return render_template('individual_recipes.html', title=Recipe_ID, recipe = recipe) 
+    return render_template('individual_recipes.html', title=Recipe_ID, recipe = recipe, ingredients = placehold) 
