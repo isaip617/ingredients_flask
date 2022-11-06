@@ -10,7 +10,6 @@
     <h2>{{recipe.title}}</h2>
     <img src={{recipe.image}}>
     <p>Ingredient List:</p>
-    <p>You will need:</p>
     {% for ingredient in recipe.usedIngredients%}
     <p>{{ingredient.original}}</p>
     {% endfor %}
